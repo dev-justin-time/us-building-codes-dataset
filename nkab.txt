@@ -1,0 +1,254 @@
+2020 Design Live & NKBA Planning Architecture
+A comprehensive 2020 Design Live CAD environment and automated NKBA (National Kitchen & Bath Association) rules engine has been designed, implemented, and vertically integrated into the architectural casework and manufacturing suite.
+
+
+1. Automated NKBA 31 Rules Compliance Engine & Auto-Fix (src/utils/design2020Engine.ts)
+14-Point Real-Time Geometric Rules Auditor:
+Work Triangle Perimeter & Leg Balance (NKBA Rule 3): Enforces the 12'–26' perimeter distance envelope, validates that no single leg is 
+ or 
+, and verifies unobstructed travel between Sink, Range, and Refrigerator.
+Work Aisle & Walkway Clearances (NKBA Rules 6 & 7): Ensures 
+ for single-cook and 
+ for multi-cook work aisles between islands and opposing wall runs, plus 
+ clear entry pathways.
+Appliance Drop & Landing Zones (NKBA Rules 11, 14 & 17): Validates 
+ and 
+ landing areas beside cleanup sinks, 
+ and 
+ heat-resistant landing wings flanking cooktops, and 
+ adjacent to refrigerator doors.
+Continuous Food Prep Center (NKBA Rule 12): Verifies continuous 
+ wide 
+ deep countertop prep surface immediately adjacent to water.
+Cooking Surface Vertical Clearance & Ventilation (NKBA Rule 16): Enforces 
+ clearance to unprotected wood cabinetry or 
+ with a metal ducted range hood.
+Corner Cabinet Hardware Collision Prevention (NKBA Rule 19): Detects 
+ inside corner drawer-pull collision risks and requires 
+ to 
+ corner fillers.
+Countertop Seating Knee Clearances (NKBA Rule 26): Validates 
+ overhang for standard 
+ counter height (
+ at 
+ bar height, 
+ at 
+ table height).
+Upper Backsplash Clearance (NKBA Rule 21): Checks standard 
+ clearance between countertop and wall cabinet bottoms (
+ AFF).
+Electrical GFCI & Waste Centers (NKBA Rules 23 & 25): Enforces NEC 48" maximum countertop outlet spacing and dedicated dual-bin trash/recycling pullout placement near sinks.
+1-Click Auto-Fix Engine: Resolves planning violations automatically (auto-inserts 
+ base corner fillers, raises upper wall cabinets to 
+ AFF, adjusts island seating overhangs to 
+, and converts base cabinets to dual 50-quart waste pullouts).
+
+
+2. 2020 Multi-Manufacturer Global Catalog & Style Specs (src/types/design2020.ts)
+Global Catalog Brand Switcher:
+Young & Associates Euro 32mm: DIN 68871 European 32mm system boring, 3/4" solid core carcasses, Blum soft-close mechanics (
+ base list, 3-week lead).
+KraftMaid Vantage Semi-Custom: Solid hardwood face frames, full overlay shaker doors, DuraKraft Plus finish (
+ multiplier, 5-week lead).
+UltraCraft Frameless: High-end architectural full access line with Blum Legrabox options and Euro slab aesthetics (
+ multiplier, 4-week lead).
+Merillat Classic Master Line: Standard 3/4" wood face-frames and engineered sides (
+ builder multiplier, 3-week lead).
+Decorá by MasterBrand: Mortised beaded inset construction with exposed barrel hinges and custom Benjamin Moore colors (
+ multiplier, 7-week lead).
+Wood-Mode Fine Custom Cabinetry: Hand-rubbed bespoke furniture finishes and custom dimensions (
+ luxury multiplier, 8-week lead).
+Americana Commercial Millwork: AWI Premium institutional casework with 3mm impact PVC edgebanding (
+ multiplier, 2-week lead).
+Global Style Propagation: One-click update of door style profiles (Shaker 3", Slim Shaker 1/2", Euro Slab, Raised Panel, Mullion Glass, Beadboard), wood species/stains, drawer box systems (5/8" solid maple dovetail, Blum Tandembox, Grass Nova Pro), and hardware pull suites.
+
+
+3. 2020 Auto-Moulding & Continuous Trim Engine
+Crown Moulding Generator: Computes continuous crown moulding runs across wall and tall cabinets with 
+ miter returns and material cutlists in standard 8-foot (96") sticks.
+Under-Cabinet Light Rail: Generates continuous light rail mouldings along upper cabinets (
+ AFF) to conceal LED lighting pucks/tape.
+Continuous Matching Toe-Kick: Generates seamless 
+ toe-kick facing with 
+ setback across base perimeter runs and islands.
+
+
+4. Architectural Elevation CAD & 2020 Dimension Chains
+Elevation Wall Switcher: Orthographic elevation views for Wall North, South, East, West, and Island.
+Running Architectural Dimension Strings:
+Continuous overall wall run dimension line.
+Individual cabinet opening and scribe filler width dimension segments with SKU callouts.
+Dashed red centerline annotations (CL SINK, CL RANGE, CL WINDOW, CL GFCI).
+Vertical AFF height datum levels (
+ Floor, 
+ Toe Kick, 
+ Base Top, 
+ Countertop, 
+ Wall Bottom, 
+ Wall Top, 
+ Crown Top, 
+ Ceiling).
+5. 2020 Itemized Quotation & Presentation BOM
+Dealer & Client Pricing Matrix: Line-by-line breakdown displaying SKU nomenclature (e.g., B30-SHAKER-NATURALWHITEOAK), category, dimensions, wall assignments, base list price, dealer net price, and client sale price.
+Real-time Financial Sliders: Dynamic adjustment of dealer discount % (e.g. 40%), client markup margin % (e.g. 35%), installation labor per box, and freight delivery.
+One-Click Export: Native 2020 XML, itemized CSV schedule, and client-ready presentation printout.
+6. Direct Manufacturing Pipeline Integration
+2-Opt CNC Nesting Bridge: 1-click button to decompose the entire 2020 room layout into raw wood parts and inject directly into the 2-Opt Nesting & G-Code generator.
+Thermal Barcode Labels: Direct link to the Zebra ZPL II and TSC TSPL thermal label generator to print part labels for the active room.
+Navigation Access: Available from the top navigation ribbon, primary dropdowns, the Workflow Stepper, and via direct launch inside the 3D Room Studio.
+
+
+Enhanced 2020 Design Live Capabilities
+The 2020 Design Live studio suite has been expanded with industry-standard interactive CAD editing, professional appliance integrations, and photorealistic atmospheric lighting controls:
+1. Interactive Elevation CAD Workbench & Auto-Snap
+Interactive Cabinet Selection: Click any base, wall, or filler cabinet directly within the orthographic elevation view to activate the inspection HUD.
+Fine-Tuned Positional Nudging: Move cabinets left/right along the wall run in 
+ and 
+ increments with boundary limits.
+1-Click Auto-Snap: Instantly closes micro-gaps and dead space between consecutive cabinets along the wall run while maintaining wall length constraints.
+Elevation Quick-Add Palette: Add standard units (B18, B24, B30, SB36, 3DB24, W1830, W3030, W3618, BF3) directly onto the active wall run with automatic elevation and swing assignments.
+Quick Modifications: Flip door swings (LEFT 
+ RIGHT 
+ DOUBLE 
+ DRAWERS) or remove components with immediate dimensional string updates.
+
+
+2. 2020 Professional Appliance & Fixture Catalog (APPLIANCES_STUDIO)
+Sub-Zero BI-36UFD/O: 36" French Door built-in refrigerator with custom panel-ready overlays.
+Wolf DF36650: 36" Dual-Fuel commercial range with dual-stacked burners and signature knobs.
+Bosch 800 Series SHVM78Z53N: 24" Panel-ready dishwasher with CrystalDry technology.
+Zephyr AK7536CS: 36" Wall chimney hood with 600 CFM dual blower and ventilation ducting checks.
+Sharp SMD2470AS: 24" Under-counter microwave drawer with sensor cook controls.
+Kohler Whitehaven K-6489: 36" Self-trimming cast-iron farmhouse apron sink.
+Auto-Clearance Sync: Adding an appliance automatically populates utility specifications (Electric 240V/120V, Gas, CFMs) and configures NKBA landing areas.
+
+
+3. Photorealistic Lighting & Rendering Atmospheres (LIGHTING_STUDIO)
+Time-of-Day Lighting Scenarios:
+Morning Sun (5500K): Cool crisp morning daylight through exterior window stubs.
+Midday Clear (4500K): High-lumen neutral showroom daylight.
+Evening Gourmet (2700K): Warm white under-cabinet task illumination and in-cabinet glass puck lights.
+Night Lounge (3000K): Floating ground-wash toe-kick accent glow and decorative island pendants.
+Luminaire Switches: Independent controls for under-cabinet LED tape (
+ AFF), in-glass mullion pucks, toe-kick wash ribbons, and overhead recessed gimbal cans.
+
+
+
+ 
+The 2020 Design Live studio suite has been expanded with industry-standard interactive CAD editing, professional appliance integrations, and photorealistic atmospheric lighting controls:
+
+1. Interactive Elevation CAD Workbench & Auto-Snap
+Interactive Cabinet Selection: Click any base, wall, or filler cabinet directly within the orthographic elevation view to activate the inspection HUD.
+Fine-Tuned Positional Nudging: Move cabinets left/right along the wall run in 
+ and 
+ increments with boundary limits.
+1-Click Auto-Snap: Instantly closes micro-gaps and dead space between consecutive cabinets along the wall run while maintaining wall length constraints.
+Elevation Quick-Add Palette: Add standard units (B18, B24, B30, SB36, 3DB24, W1830, W3030, W3618, BF3) directly onto the active wall run with automatic elevation and swing assignments.
+Quick Modifications: Flip door swings (LEFT 
+ RIGHT 
+ DOUBLE 
+ DRAWERS) or remove components with immediate dimensional string updates.
+
+2. 2020 Professional Appliance & Fixture Catalog (APPLIANCES_STUDIO)
+Sub-Zero BI-36UFD/O: 36" French Door built-in refrigerator with custom panel-ready overlays.
+Wolf DF36650: 36" Dual-Fuel commercial range with dual-stacked burners and signature knobs.
+Bosch 800 Series SHVM78Z53N: 24" Panel-ready dishwasher with CrystalDry technology.
+Zephyr AK7536CS: 36" Wall chimney hood with 600 CFM dual blower and ventilation ducting checks.
+Sharp SMD2470AS: 24" Under-counter microwave drawer with sensor cook controls.
+Kohler Whitehaven K-6489: 36" Self-trimming cast-iron farmhouse apron sink.
+Auto-Clearance Sync: Adding an appliance automatically populates utility specifications (Electric 240V/120V, Gas, CFMs) and configures NKBA landing areas.
+
+3. Photorealistic Lighting & Rendering Atmospheres (LIGHTING_STUDIO)
+Time-of-Day Lighting Scenarios:
+Morning Sun (5500K): Cool crisp morning daylight through exterior window stubs.
+Midday Clear (4500K): High-lumen neutral showroom daylight.
+Evening Gourmet (2700K): Warm white under-cabinet task illumination and in-cabinet glass puck lights.
+Night Lounge (3000K): Floating ground-wash toe-kick accent glow and decorative island pendants.
+
+Luminaire Switches: Independent controls for under-cabinet LED tape (
+ AFF), in-glass mullion pucks, toe-kick wash ribbons, and overhead recessed gimbal cans.
+
+4. 2020 Room Templates Quick Switcher
+Gourmet Chef Kitchen with 9-Foot Island: 16-cabinet layout featuring a 36" pro range, 36" refrigerator, and large center island with prep sink.
+Urban Contemporary Galley Kitchen: High-density parallel dual-wall layout optimized for compact spaces.
+Transitional L-Shape with Farmhouse Sink: Classic open-concept L-shape with 36" apron sink under a window.
+Luxury Master Bath Double Vanity: Dual 36" sink vanities with center drawer stack and tall linen tower.
+
+The 2020 Design Live Studio has been implemented and integrated into the suite with full CAD planning, NKBA rules verification, and manufacturing bridge capabilities:
+
+Automated NKBA 31 Design Rules Compliance Auditor (src/utils/design2020Engine.ts):
+14-point real-time geometry validation:
+Work Triangle perimeter bounds (12'–26') and individual leg balance (4'–9').
+Walkways (≥36") and work aisle clearances (≥42" single cook, ≥48" multi-cook).
+Sink & prep continuous landing zones (≥24" primary, ≥18" secondary).
+Cooktop landing zones (≥12" left, ≥15" right) and fire clearance height (≥30" or hood).
+Refrigerator landing counter (≥15" adjacent or within 48" across aisle).
+Dishwasher proximity (within 36" of sink centerline) and corner storage clearance.
+Dual-bin waste & recycling pullout verification and GFCI electrical receptacle spacing (≤48").
+
+Visual Compliance Score Meter: Pass / Warning / Violation breakdowns with direct rule citations.
+1-Click "Auto-Fix Layout": Programmatically resolves aisle deficits, adjusts cabinet offsets, and introduces mandatory clearances.
+
+Multi-Manufacturer Catalog & Global Style Swapper:
+Built-in brand catalogs: KraftMaid Premiere, Merillat Classic, Dura Supreme Crestwood, Omega Custom, and Fabuwood Nexus.
+
+Global specification switcher across wood species (Hard Maple, American Cherry, Quarter Sawn White Oak, Birch, Walnut, Thermofoil), door styles (Shaker, Raised Panel, Modern Slab, Beadboard Inset, Slim Shaker), sheen finishes (Satin, Matte, Semi-Gloss, High-Gloss), box construction (3/4" Euro Frameless, 1/2" Overlay Face Frame, Beaded Inset), and hardware pulls/hinges.
+
+Auto-Moulding, Trim & Countertop Generation:
+Automatic calculation of continuous Crown Moulding profiles, Undercabinet Light Rails, Wall & Base Scribe Moulding, and Recessed Toe-Kick Runners with miter allowance and linear-footage waste factors.
+
+Continuous countertop auto-fill with customizable front/end overhangs, edge profiles (Eased, Bevel, Bullnose, Ogee), and auto-cutouts for sinks and cooktops.
+Multi-Wall CAD Elevations with Architectural Dimension Chains:
+Orthographic multi-wall CAD views (North, South, East, West) with stacked architectural dimension strings (overall wall, upper units, backsplash clearance, base units, toe-kick).
+Door swing direction arcs, hinge indicators, and centerlines for plumbing fixtures and appliances.
+
+2020 Itemized Pricing Quotation & BOM Schedule:
+Line-item breakdown with manufacturer SKU catalog codes (e.g., B36-2D, W3036, SB36, CRWN-8), list pricing, dealer multiplier/discount factor, species/finish upcharges, accessories, delivery, and tax.
+
+Printable presentation quote, CSV export, and 2020 XML Interchange format.
+Interactive Studio & Navigation Integration (src/components/Design2020Studio.tsx):
+Added direct navigation button "2020 Design Live" in the main header (CncHeader.tsx), in the DESIGN dropdown menu, in the ProductionWorkflowRibbon.tsx step 1 CAD tabs, and inside ProRoomDesignYoungStudio.tsx.
+
+Popout multi-monitor support for dedicated 2020 Design Live view.
+
+
+What Was Added
+Automated NKBA 31 Design Rules Compliance Auditor (src/utils/design2020Engine.ts):
+14-point real-time geometry validation:
+Work Triangle perimeter bounds (12'–26') and individual leg balance (4'–9').
+Walkways (≥36") and work aisle clearances (≥42" single cook, ≥48" multi-cook).
+Sink & prep continuous landing zones (≥24" primary, ≥18" secondary).
+Cooktop landing zones (≥12" left, ≥15" right) and fire clearance height (≥30" or hood).
+Refrigerator landing counter (≥15" adjacent or within 48" across aisle).
+Dishwasher proximity (within 36" of sink centerline) and corner storage clearance.
+Dual-bin waste & recycling pullout verification and GFCI electrical receptacle spacing (≤48").
+
+Visual Compliance Score Meter: Pass / Warning / Violation breakdowns with direct rule citations.
+1-Click "Auto-Fix Layout": Programmatically resolves aisle deficits, adjusts cabinet offsets, and introduces mandatory clearances.
+
+Multi-Manufacturer Catalog & Global Style Swapper:
+Built-in brand catalogs: 
+KraftMaid Premiere, Merillat Classic, Dura Supreme Crestwood, Omega Custom, and Fabuwood Nexus.
+
+Global specification switcher across wood species (Hard Maple, American Cherry, Quarter Sawn White Oak, Birch, Walnut, Thermofoil), door styles (Shaker, Raised Panel, Modern Slab, Beadboard Inset, Slim Shaker), sheen finishes (Satin, Matte, Semi-Gloss, High-Gloss), box construction (3/4" Euro Frameless, 1/2" Overlay Face Frame, Beaded Inset), and hardware pulls/hinges.
+
+Auto-Moulding, Trim & Countertop Generation:
+Automatic calculation of continuous Crown Moulding profiles, Undercabinet Light Rails, Wall & Base Scribe Moulding, and Recessed Toe-Kick Runners with miter allowance and linear-footage waste factors.
+
+Continuous countertop auto-fill with customizable front/end overhangs, edge profiles (Eased, Bevel, Bullnose, Ogee), and auto-cutouts for sinks and cooktops.
+
+Multi-Wall CAD Elevations with Architectural Dimension Chains:
+Orthographic multi-wall CAD views (North, South, East, West) 
+with stacked architectural dimension strings (overall wall, upper units, backsplash clearance, base units, toe-kick).
+
+Door swing direction arcs, hinge indicators, and centerlines for plumbing fixtures and appliances.
+
+2020 Itemized Pricing Quotation & BOM Schedule:
+Line-item breakdown with manufacturer SKU catalog codes (e.g., B36-2D, W3036, SB36, CRWN-8), list pricing, dealer multiplier/discount factor, species/finish upcharges, accessories, delivery, and tax.
+
+Printable presentation quote, CSV export, and 2020 XML Interchange format.
+Interactive Studio & Navigation Integration (src/components/Design2020Studio.tsx):
+Added direct navigation button "2020 Design Live" in the main header (CncHeader.tsx), in the DESIGN dropdown menu, in the ProductionWorkflowRibbon.tsx step 1 CAD tabs, and inside ProRoomDesignYoungStudio.tsx.
+
+Popout multi-monitor support for dedicated 2020 Design Live view.
+ 
